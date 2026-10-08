@@ -1,0 +1,72 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get LICET Boys Rules" sap:VirtualizedContainerService.HintSize="878,1967.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="httpResponse" />
+      <Variable x:TypeArguments="x:String" Name="htmlContent" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule1Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule2Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule3Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule4Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule5Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule6Words" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="boysRule7Words" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="Get LICET webpage" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="449.6,276.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="https://licet.ac.in/rules-and-regulations/" Result="[httpResponse]" RetryCount="[3]" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TimeoutInMiliseconds="[30000]" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True" />
+    <Assign x:TypeArguments="x:String" DisplayName="Store webpage text" sap:VirtualizedContainerService.HintSize="449.6,54.4" sap2010:WorkflowViewState.IdRef="Assign`1_1" To="[htmlContent]" Value="[httpResponse.TextContent]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim sectionMatch As System.Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(htmlContent, &quot;(?is)DRESS.*?CODE.*?BOYS:.*?&lt;ul[^&gt;]*&gt;(.*?)&lt;/ul&gt;&quot;)&#xA;If Not sectionMatch.Success Then Throw New System.ApplicationException(&quot;DRESS CODE FOR BOYS section was not found.&quot;)&#xA;Dim items As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(sectionMatch.Groups(1).Value, &quot;(?is)&lt;li[^&gt;]*&gt;(.*?)&lt;/li&gt;&quot;)&#xA;If items.Count &lt;&gt; 7 Then Throw New System.ApplicationException(&quot;Expected 7 rules, but found &quot; &amp; items.Count.ToString() &amp; &quot;.&quot;)&#xA;Dim allLists As New System.Collections.Generic.List(Of System.Collections.Generic.List(Of String))()&#xA;For Each item As System.Text.RegularExpressions.Match In items&#xA;  Dim cleanText As String = System.Text.RegularExpressions.Regex.Replace(item.Groups(1).Value, &quot;(?is)&lt;[^&gt;]+&gt;&quot;, &quot; &quot;)&#xA;  cleanText = System.Net.WebUtility.HtmlDecode(cleanText)&#xA;  cleanText = cleanText.Replace(vbCr, &quot; &quot;).Replace(vbLf, &quot; &quot;).Replace(vbTab, &quot; &quot;).Trim()&#xA;  Do While cleanText.Contains(&quot;  &quot;)&#xA;    cleanText = cleanText.Replace(&quot;  &quot;, &quot; &quot;)&#xA;  Loop&#xA;  allLists.Add(New System.Collections.Generic.List(Of String)(cleanText.Split(New Char() {&quot; &quot;c}, System.StringSplitOptions.RemoveEmptyEntries)))&#xA;Next&#xA;boysRule1Words = allLists(0)&#xA;boysRule2Words = allLists(1)&#xA;boysRule3Words = allLists(2)&#xA;boysRule4Words = allLists(3)&#xA;boysRule5Words = allLists(4)&#xA;boysRule6Words = allLists(5)&#xA;boysRule7Words = allLists(6)" DisplayName="Extract seven word lists" sap:VirtualizedContainerService.HintSize="449.6,400.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="htmlContent">[htmlContent]</InArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule1Words">[boysRule1Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule2Words">[boysRule2Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule3Words">[boysRule3Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule4Words">[boysRule4Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule5Words">[boysRule5Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule6Words">[boysRule6Words]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="boysRule7Words">[boysRule7Words]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Show Rule 1" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Join(&quot; &quot;, boysRule1Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 2" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Join(&quot; &quot;, boysRule2Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 3" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[String.Join(&quot; &quot;, boysRule3Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 4" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Join(&quot; &quot;, boysRule4Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 5" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[String.Join(&quot; &quot;, boysRule5Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 6" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[String.Join(&quot; &quot;, boysRule6Words)]" />
+    <ui:LogMessage DisplayName="Show Rule 7" sap:VirtualizedContainerService.HintSize="449.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[String.Join(&quot; &quot;, boysRule7Words)]" />
+  </Sequence>
+</Activity>
